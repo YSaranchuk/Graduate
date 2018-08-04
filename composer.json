@@ -1,0 +1,16 @@
+{
+    "name": "yana/graduate_work",
+    "license": "MIT",
+    "type": "project",
+    "description": "",
+    "require": {
+        "php": ">=5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Graduate\\Database\\": "upload/database/",
+            "Model\\": "model/",
+            "Controller\\": "controller/"
+        }
+    }
+}
