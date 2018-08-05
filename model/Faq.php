@@ -54,14 +54,14 @@ class Faq {
 	
 	public function showQuestionNoAnswer() {
 		$sql = "SELECT question.name, category.name AS list_name, 
-									question.id, 
-									question.user_name, 
-									question.data, 
-									question.status, 
-									question.answer, 
-									question.user_email FROM question INNER JOIN 
-									category 
-				WHERE question.answer = '' AND category.id = question.list_id GROUP BY question.name ORDER BY question.data";
+			question.id, 
+			question.user_name, 
+			question.data, 
+			question.status, 
+			question.answer, 
+			question.user_email FROM question INNER JOIN 
+			category 
+			WHERE question.answer = '' AND category.id = question.list_id GROUP BY question.name ORDER BY question.data";
 			
 		$getQuestionNoAnswer = $this->db->query($sql);
 		$getQuestionNoAnswer->setFetchMode(\PDO::FETCH_ASSOC);
@@ -134,14 +134,14 @@ class Faq {
 		$date = date("Y-m-d H:i:s");
 		
 		$sql = "INSERT INTO question (name, list_id, user_name, data, status, answer, user_email) VALUES(
-																			:name,
-																			:list,
-																			:userName,
-																			:date,
-																			'0',
-																			'". null ."',
-																			:email
-																			)";
+		    :name,
+		    :list,
+		    :userName,
+		    :date,
+		    '0',
+		    '". null ."',
+		    :email
+		    )";
 		
 		$sth = $this->db->prepare($sql);
 		$sth->bindValue(':name', $text, \PDO::PARAM_STR);
