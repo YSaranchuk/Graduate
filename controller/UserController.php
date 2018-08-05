@@ -1,9 +1,10 @@
 <?php
+
 namespace Controller;
+
 use  Model\Faq;
 use  Model\User;
 use Graduate\Database\DataBase;
-
 
 class UserController {
 	private $modelUser = null;
